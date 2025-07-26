@@ -1,0 +1,89 @@
+.carousel {
+  width: 100%;
+  overflow: hidden;    /* hide any overflow from arrows */
+}
+
+.slide {
+/* Force each slide to be the same height */
+  position: relative;
+  display: flex;
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center of image+content */
+  gap: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+  min-height: 500px;         /* adjust as needed for your largest image */
+}
+
+.slide img {
+  flex: 0 0 40%;
+  max-height: 100%;            
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.slide-content {
+  flex: 0 0 40%;
+  text-align: center;              /* center text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;         /* vertical center */
+  gap: 16px;
+}
+
+.slide-content h2 {
+  margin: 0;
+  color: #1c2d44;
+  font-size: 2rem;
+}
+
+.slide-content p {
+  margin: 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Move arrows inside and vertically center */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: 1px solid #1c2d44;
+ /* border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  color: #1c2d44;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;*/
+}
+
+.arrow-left {
+  left: 16px;
+}
+
+.arrow-right {
+  right: 16px;
+}
+
+.arrow:hover {
+  background: #FAC75C;
+  color: #fff;
+}
+
+/* Responsive: stack image above text */
+@media (max-width: 768px) {
+  .slide {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .slide img,
+  .slide-content {
+    flex: unset;
+    max-width: 100%;
+    width: 100%;
+  }
+}

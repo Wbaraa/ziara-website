@@ -1,0 +1,223 @@
+/* src/pages/Signup.css*/
+
+
+
+/* Give each service its own background */
+.service-shop {
+  background-color: #9A370E;  /* choose your colors */
+}
+
+.service-restaurant {
+  background-color: #FAC75C;
+}
+
+.service-hotel {
+  background-color: #9A370E;
+}
+
+.service-activity {
+  background-color: #FAC75C;
+}
+
+/* Optional: subtle hover effect */
+.service-box:hover {
+  filter: brightness(0.95);
+}
+
+/* Overall page centering below the navbar */
+.signup-page {
+  padding-top: 80px; /* pushes below 60px navbar + a bit */
+  display: flex;
+  justify-content: center;
+}
+
+/* The split‑screen container */
+.signup-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Left: Illustration */
+.signup-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FAC75C;
+}
+.signup-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Right: Form styling */
+.signup-form {
+  flex: 1;
+  padding: 40px 30px;
+}
+.signup-form h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.signup-form label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.signup-submit {
+  width: 100%;
+  background: #FAC75C;
+  color: #1C2D44;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+  .signup-image,
+  .signup-form {
+    width: 100%;
+    padding: 20px;
+  }
+}
+/* ===== existing signup styles ===== */
+
+.signup-page {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+.signup-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.signup-image {
+  flex: 1;
+  background: #9A370E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup-image img {
+  max-width: 100%;
+  height: auto;
+}
+.signup-form {
+  flex: 1;
+  padding: 40px 30px;
+}
+.signup-form h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.signup-form label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.signup-submit {
+  width: 100%;
+  background: #FAC75C;
+  color: #1C2D44;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 24px;
+}
+/* 1) Allow the title to sit on its own line, then wrap boxes below */
+.service-selection {
+  display: flex;
+  flex-wrap: wrap;       /* allow wrapping */
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.service-selection__title {
+  flex: 1 0 100%;        /* take 100% width, forcing the next items down */
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* 2) Keep the boxes all in one row (unless the screen is very narrow) */
+.service-selection {
+  /* already flex, wrap = wrap, so if there's room they'll all sit side by side */
+}
+
+/* 3) Fix the left image column to match the boxes’ total width */
+.signup-image {
+  /* roughly: 4 boxes × 80px + 3 gaps × 16px = 368px → round up to 380px or 400px */
+  flex: 0 0 380px;       /* fix the column width */
+  background: #FAC75C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* rest of your existing box styles… */
+.service-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  padding: 8px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+  text-align: center;
+}
+.service-box input { display: none; }
+.service-icon {
+  width: 100px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+.service-box span {
+  font-size: 0.9rem;
+  margin-top: 4px;
+  text-transform: capitalize;
+}
+/* highlight */
+.service-box input:checked ~ .service-icon,
+.service-box input:checked ~ span {
+  border-color: #FAC75C;
+  background-color: rgba(250, 199, 92, 0.1);
+}
