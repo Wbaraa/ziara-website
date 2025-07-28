@@ -35,7 +35,7 @@ export default function Navbar() {
 
           {/* — Actions: Login / Sign Up / Language */}
           <div className="navbar__actions">
-            <button className="btn login">Login</button>
+            <Link to={'/Login'} className="btn login"> Login </Link>
             <Link to={'/Signup'} className="btn signup"> Sign Up </Link>
             <button className="language-switch" onClick={toggleLang}>
               {lang} <span>▼</span>

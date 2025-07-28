@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Carousel from "./components/Carousel";
 import Signup from "./pages/Signup";
+import Login  from "./pages/Login";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
 
           {/* Signup page on "/signup" */}
           <Route path="/signup" element={<Signup />} />
+
+          {/* Signup page on "/login" */}
+          <Route path="/login" element={<Login />} />
 
           {/* Redirect any unknown path back to home */}
           <Route path="*" element={<Navigate to="/" replace />} />
