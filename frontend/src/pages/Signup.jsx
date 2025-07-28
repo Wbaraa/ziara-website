@@ -1,5 +1,6 @@
 // src/pages/Signup.jsx
 import React, { useState } from "react";
+import { useNavigate }       from "react-router-dom";
 import "./Signup.css";
 
 export default function Signup() {
@@ -32,13 +33,16 @@ export default function Signup() {
       setForm({ ...form, [name]: value });
     }
   };
+  const navigate = useNavigate();
+
+  // … your handleChange stays the same …
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: client‑side validation & API call
     console.log("Signing up with:", form);
+    // TODO: actually send to server…
+    navigate("/additional-info");   // <— push the second step
   };
-
   return (
     <div className="signup-page">
       <div className="signup-container">
@@ -54,8 +58,8 @@ export default function Signup() {
           <label>
             Business_name
             <input
-              name="name"
-              value={form.name}
+              name="Business_name"
+              value={form.Business_name}
               onChange={handleChange}
               required
             />
@@ -103,7 +107,7 @@ export default function Signup() {
     className={`service-box service-${svc.id}`}
   >
     <input
-      type="checkbox"
+      type="radio"
       name="services"
       value={svc.id}
       checked={form.services.includes(svc.id)}

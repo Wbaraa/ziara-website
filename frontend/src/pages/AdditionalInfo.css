@@ -1,0 +1,98 @@
+/* src/pages/AdditionalInfo.css */
+.info-page {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+.info-container {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.info-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.info-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.info-submit {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  background: #FAC75C;
+  border: none;
+  border-radius: 20px;
+  color: #1C2D44;
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* push down below navbar and center horizontally */
+.info-page {
+  padding: 80px 20px 40px;   /* space for navbar + breathing room */
+  display: flex;
+  justify-content: center;
+}
+
+/* make the form take full width up to a max */
+.info-form {
+  width: 100%;
+  max-width: 500px;          /* adjust to taste */
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* form header */
+.info-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* each field */
+.info-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.info-form input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.25rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* submit button */
+.info-submit {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  background: #FAC75C;
+  color: #1C2D44;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* small screens: shrink padding */
+@media (max-width: 480px) {
+  .info-page {
+    padding: 60px 10px;
+  }
+  .info-form {
+    padding: 1.5rem 1rem;
+  }
+}

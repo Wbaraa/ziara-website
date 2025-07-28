@@ -55,6 +55,12 @@ const clientSchema = new mongoose.Schema({
   tiktok: {
     type: String,
   },
+
+  plan: {
+    priority: {
+      type: String,
+    },
+  },
 });
 
 const Client = mongoose.model("Client", clientSchema);

@@ -1,5 +1,11 @@
 import express from "express";
-import { logIn, SignUp, updateProfile } from "../controllers/client.controller";
+
+import {
+  logIn,
+  SignUp,
+  updateProfile,
+} from "../controllers/client.controller.js";
+import upload from "../middleware/multer.js";
 
 const clientRoutes = express.Router();
 

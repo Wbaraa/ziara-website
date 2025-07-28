@@ -1,4 +1,5 @@
-import Client from "../models/client";
+
+import Client from "../models/client.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -79,8 +80,9 @@ export const updateProfile = async (req, res) => {
     const updates = req.body;
 
     // Handle single image upload
-    if (req.file) {
-      updates.profileImage = req.file.path;
+
+    if (req.files?.profileImage?.[0]) {
+      updates.profileImage = req.files.profileImage[0].path;
     }
 
     // Handle multiple image upload
@@ -91,10 +93,15 @@ export const updateProfile = async (req, res) => {
     }
 
     const updatedUser = await Client.findByIdAndUpdate(
-      req.userId,
+
+      // req.userId,
+      updates.userId,
       { $set: updates },
       { new: true, runValidators: true } //  new option returns the updated document and runValidators ensures validation rules are applied
     ).select("-password");
+    if (!updatedUser) {
+      return res.status(404).json({ message: "Client not found" });
+    }
 
     res.status(200).json({
       success: true,
